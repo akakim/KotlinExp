@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.akakim.kotlinlib.adapter.ActivityAdapter
 import com.akakim.kotlinlib.adapter.ActivityItem
 import com.akakim.kotlinlib.adapter.OnClickListener
+import com.akakim.kotlinlib.ui.KakaoSampleActivity
 import com.akakim.kotlinlib.ui.NaverAPIInfoActivity
 
 class MainActivity : AppCompatActivity(), OnClickListener {
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         sampleList.add(  ActivityItem( Intent( this,NaverAPIInfoActivity::class.java) ,"네이버 테스트 화면") )
-        sampleList.add(  ActivityItem( Intent( this,NaverAPIInfoActivity::class.java) ,"aaaa 테스트 화면") )
+        sampleList.add(  ActivityItem( Intent( this,KakaoSampleActivity::class.java) ,"카카토 맵 테스트 화면") )
         sampleList.add(  ActivityItem( Intent( this,NaverAPIInfoActivity::class.java) ,"bbbb 테스트 화면") )
         sampleList.add(  ActivityItem( Intent( this,NaverAPIInfoActivity::class.java) ,"cccc 테스트 화면") )
         sampleList.add(  ActivityItem( Intent( this,NaverAPIInfoActivity::class.java) ,"네이버 테스트 화면") )

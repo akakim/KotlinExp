@@ -1,16 +1,23 @@
 package com.akakim.kotlinlib.network
 
+import android.content.Context
+import android.util.Log
+import androidx.annotation.RawRes
+import com.akakim.kotlinlib.data.NaverAPIErrorItem
 import com.akakim.kotlinlib.data.NaverSearchAPI
 import com.akakim.kotlinlib.util.DLog
+import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import android.util.Log
+import retrofit2.http.GET
+import java.io.*
+
+
 /**
  * @author KIM
  * @version 0.0.1
@@ -18,6 +25,8 @@ import android.util.Log
  * @date 2021-01-31
  */
 class APIManager() {
+//    @GET(value="v1/search/local.json")
+
     val searchAPI = "https://openapi.naver.com/"
     val api = "v1/search/local.json"
 
@@ -27,27 +36,17 @@ class APIManager() {
     val naverClientSecrete ="susq0pojQF"
 
 
-    companion object{
-
-//        private lateinit var instance : APIManager
-
-        @Volatile private var instance: APIManager? = null
-
-        @JvmStatic fun getInstance(): APIManager =
-            instance ?: synchronized(this) {
-                instance ?: APIManager().also {
-                    instance = it
-                }
-            }
-
-//        fun getInstance(): APIManager {
+//    companion object{
 //
-//            if( instance == null)
-//                instance = APIManager()
+//        @Volatile private var instance: APIManager? = null
 //
-//            return instance
-//        }
-    }
+//        @JvmStatic fun getInstance(): APIManager =
+//            instance ?: synchronized(this) {
+//                instance ?: APIManager().also {
+//                    instance = it
+//                }
+//            }
+//    }
 
     fun createNaverHttpClient() : OkHttpClient{
         val builder = OkHttpClient.Builder()
@@ -93,7 +92,9 @@ class APIManager() {
                         Log.d( "onResponse", response.code().toString())
 
                         response.errorBody()?.apply {
-                            Log.d( "onErrorBody", this.contentLength().toString())
+                            val errorItem = Gson().fromJson( charStream(),NaverAPIErrorItem::class.java)
+
+                            Log.d( "onErrorBody", errorItem.toString())
 
                         }
 
@@ -106,8 +107,30 @@ class APIManager() {
                     }
 
 
-                })
-        }
+                })}.run()
+
     }
+
+   /* @Throws(IOException::class)
+    fun getJSONFromFile(context: Context, @RawRes id: Int): String? {
+        val inputStream: InputStream = context.getResources().openRawResource(id)
+        val writer: Writer = StringWriter()
+        val buffer = CharArray(1024)
+        try {
+            val reader: Reader = BufferedReader(InputStreamReader(inputStream, "UTF-8"))
+            var n: Int
+            while (reader.read(buffer).also({ n = it }) != -1) {
+                writer.write(buffer, 0, n)
+            }
+        } catch (e: UnsupportedEncodingException) {
+            e.printStackTrace()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        } finally {
+            if ( inputStream != null)
+                inputStream.close()
+        }
+        return writer.toString()
+    }*/
 
 }

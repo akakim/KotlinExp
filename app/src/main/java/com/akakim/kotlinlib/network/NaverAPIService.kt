@@ -14,4 +14,8 @@ interface NaverAPIService {
 
     @GET(value="v1/search/local.json")
     fun getTestData() : Call<NaverSearchAPI>
+
+//    @GET(value="v1/search/local.json")
+//    fun getTestData() : Call<NaverSearchAPI>
+
 }
