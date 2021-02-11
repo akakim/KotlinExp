@@ -8,6 +8,14 @@ import net.daum.android.map.MapView
 
 
 class KakaoSampleActivity : AppCompatActivity() {
+
+    companion object {
+        // Used to load the 'native-lib' library on application startup.
+        init {
+            System.loadLibrary("libDaumMapEngineApi")
+
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kakao)

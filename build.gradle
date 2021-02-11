@@ -16,8 +16,12 @@ buildscript {
 
 allprojects {
     repositories {
+        maven {
+            url "https://naver.jfrog.io/artifactory/maven/"
+        }
         google()
         jcenter()
+
     }
 }
 

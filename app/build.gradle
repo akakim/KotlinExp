@@ -16,6 +16,16 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        externalNativeBuild {
+//            // Encapsulates your CMake build configurations.
+//            // For ndk-build, instead use the ndkBuild block.
+//            cmake {
+//                // Specifies a path to your CMake build script that's
+//                // relative to the build.gradle file.
+//                cppFlags ""
+//            }
+//        }
+
     }
 
     buildTypes {
@@ -36,6 +46,13 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+//    externalNativeBuild {
+//        cmake {
+//            path "src/main/cpp/CMakeLists.txt"
+//            version "3.10.2"
+//        }
+//    }
 }
 
 dependencies {
@@ -64,6 +81,9 @@ dependencies {
     // livedata
     implementation 'android.arch.lifecycle:extensions:1.1.1'
     kapt 'android.arch.lifecycle:compiler:1.1.1'
+
+    // 네이버 지도 SDK
+    implementation 'com.naver.maps:map-sdk:3.10.2'
 
 
     testImplementation 'junit:junit:4.+'

@@ -1,5 +1,6 @@
 package com.akakim.kotlinlib.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -45,10 +46,11 @@ class ActivityAdapter : RecyclerView.Adapter<ActivityHolder> {
         private val tvSummery  = itemView.findViewById<AppCompatTextView>(R.id.tvSummery)
 
         fun bind( activityItem: ActivityItem,itemClickListener : OnClickListener){
-
+            Log.d("RvMain","onBind?");
             tvSummery.text = activityItem.description
 
             itemView.setOnClickListener {
+                Log.d("RvMain","onClick?");
                 itemClickListener.onClickITem( activityItem )
             }
         }
