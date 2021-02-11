@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     lateinit var rvMain : RecyclerView
 
     init {
-        sampleList = mutableListOf()
+        sampleList = mutableListOf()//test 
 
     }
 
