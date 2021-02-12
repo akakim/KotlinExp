@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
 
     init {
         sampleList = mutableListOf()//test 
-
+    
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
