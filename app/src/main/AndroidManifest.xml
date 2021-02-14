@@ -20,11 +20,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinLib">
-        <activity android:name=".ui.naver.cloud.SearchAPIActivity"></activity>
+        <activity android:name=".ui.ResultActivity"></activity>
+        <activity android:name=".ui.GsonEx" />
+        <activity android:name=".ui.naver.cloud.GeoCoding" />
+        <activity android:name=".ui.naver.cloud.SearchAPIActivity" />
         <activity android:name=".ui.naver.SampleListActivity" />
         <activity android:name=".ui.naver.cloud.MapAPIActivity" />
         <activity android:name=".ui.KakaoSampleActivity" />
         <activity android:name=".ui.NaverAPIInfoActivity" />
+        <activity android:name=".ui.GsonEx" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -24,8 +24,10 @@ import java.io.*
  * @since 0.0.1
  * @date 2021-01-31
  */
-class APIManager() {
+open class APIManager() {
 //    @GET(value="v1/search/local.json")
+
+    var host: String = ""
 
     val searchAPI = "https://openapi.naver.com/"
     val api = "v1/search/local.json"
@@ -34,6 +36,7 @@ class APIManager() {
 
     val naverClientID = "qD8w5T7FSGCfZzuwZfzz"
     val naverClientSecrete ="susq0pojQF"
+
 
 
 //    companion object{
@@ -68,7 +71,7 @@ class APIManager() {
 
         // 네트워크 설정.
         val retrofit : Retrofit = Retrofit.Builder()
-            .baseUrl(searchAPI)
+            .baseUrl(host)
             .client( createNaverHttpClient() )
             .addConverterFactory(GsonConverterFactory.create( builder.create() ))
             .build()

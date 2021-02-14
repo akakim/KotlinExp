@@ -62,9 +62,9 @@ class MapAPIActivity : AppCompatActivity(),OnMapReadyCallback {
 
         }
 
-        marker.map = naverMap
-        marker.width = Marker.SIZE_AUTO
-        marker.height = Marker.SIZE_AUTO
+        marker.map      = naverMap
+        marker.width    = Marker.SIZE_AUTO
+        marker.height   = Marker.SIZE_AUTO
 
         val infoWindow = InfoWindow()
         infoWindow.adapter = object : InfoWindow.DefaultTextAdapter(this) {
@@ -75,8 +75,7 @@ class MapAPIActivity : AppCompatActivity(),OnMapReadyCallback {
 
         infoWindow.position = LatLng(lat,longtitute)
         infoWindow.open(naverMap)
-//        infoWindow.open(marker)
-//        infoWindow.open(naverMap)
+
 
     }
 }
