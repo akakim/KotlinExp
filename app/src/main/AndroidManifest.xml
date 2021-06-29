@@ -20,7 +20,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinLib">
-        <activity android:name=".ui.naver.cloud.SearchAPIActivity"></activity>
+        <activity android:name=".inflearn.RoomExActivity"></activity>
+        <activity android:name=".ui.naver.cloud.SearchAPIActivity" />
         <activity android:name=".ui.naver.SampleListActivity" />
         <activity android:name=".ui.naver.cloud.MapAPIActivity" />
         <activity android:name=".ui.naver.NaverCloudPlatform" />

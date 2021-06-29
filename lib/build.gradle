@@ -1,6 +1,8 @@
 plugins {
     id 'java-library'
     id 'kotlin'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
 }
 
 java {

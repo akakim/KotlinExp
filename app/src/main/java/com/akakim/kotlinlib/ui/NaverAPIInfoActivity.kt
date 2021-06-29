@@ -40,15 +40,11 @@ class NaverAPIInfoActivity : AppCompatActivity(), APICallback {
         call: Call<NaverSearchAPI>,
         response: Response<NaverSearchAPI>
     ) {
-
-
         tvResult.text = response.body().toString()
 
     }
 
     override fun apiError(call: Call<NaverSearchAPI>, t: Throwable) {
         Log.e( "apiError" , "error")
-        //Log.e( "apiError" , t.message)
-//        t.printStackTrace()
     }
 }
